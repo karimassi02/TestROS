@@ -13,7 +13,7 @@ class Agent:
         self.hedonist_table = _hedonist_table
         self._action = None
         self.anticipated_outcome = None
-
+        self.counter = 0
     def action(self, outcome):
         """ tracing the previous cycle """
         if self._action is not None:
@@ -21,11 +21,29 @@ class Agent:
                   ", Anticipation: " + str(self.anticipated_outcome) +
                   ", Outcome: " + str(outcome) +
                   ", Satisfaction: (anticipation: " + str(self.anticipated_outcome == outcome) +
-                  ", valence: " + str(self.hedonist_table[self._action][outcome]) + ")")
-
+                  ", valence: " + str(self.hedonist_table[self._action][outcome]) +
+                  "; counter: " + str(self.counter) + ")")
+            self.counter+=1
+                
         """ Computing the next action to enact """
         # TODO: Implement the agent's decision mechanism
         self._action = 0
+
+        # while (x<6):
+        #     self._action = 0
+        #
+        #     x+=1
+        # else:
+        #     self._action = 1
+        # if self._action == 0:
+        #         self._action = 1
+
+        if self.counter >= 5:
+            self._action = 1
+            #self.counter = 0
+            if self.counter > 10:
+                self._action = 0
+                self.counter = 0
         # TODO: Implement the agent's anticipation mechanism
         self.anticipated_outcome = 0
         return self._action
@@ -62,6 +80,8 @@ class Environment3:
             _outcome = 0
         self.previous_action = action
         return _outcome
+
+#class Environment4:
 
 
 # TODO Define the hedonist valance of interactions (action, outcome)
