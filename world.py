@@ -5,7 +5,7 @@
 from turtlepy_enacter import TurtlePyEnacter
 # from Agent5 import Agent5
 # from OsoyooCarEnacter import OsoyooCarEnacter
-
+import random
 
 class Agent:
     def __init__(self, _hedonist_table):
@@ -14,6 +14,7 @@ class Agent:
         self._action = None
         self.anticipated_outcome = None
         self.counter = 0
+        self.previous_outcome = None
     def action(self, outcome):
         """ tracing the previous cycle """
         if self._action is not None:
@@ -40,10 +41,14 @@ class Agent:
 
         if self.counter >= 5:
             self._action = 1
-            #self.counter = 0
-            if self.counter > 10:
-                self._action = 0
-                self.counter = 0
+            # self.counter = 0
+        #     if self.counter > 10:
+        #         self._action = 0
+        #         self.counter = 0
+
+        if self.previous_outcome == outcome:
+            counter +=1
+            self.previous_outcome = outcome
         # TODO: Implement the agent's anticipation mechanism
         self.anticipated_outcome = 0
         return self._action
@@ -81,7 +86,9 @@ class Environment3:
         self.previous_action = action
         return _outcome
 
-#class Environment4:
+class Environment4:
+    def outcome(self, action):
+        return random.randint(0, 1)
 
 
 # TODO Define the hedonist valance of interactions (action, outcome)
@@ -90,9 +97,10 @@ hedonist_table = [[-1, 1], [-1, 1]]
 a = Agent(hedonist_table)
 # a = Agent5(hedonist_table)
 # TODO Choose an environment
-e = Environment1()
+# e = Environment1()
 # e = Environment2()
 # e = Environment3()
+e = Environment4()
 # e = TurtleSimEnacter()
 # e = TurtlePyEnacter()
 # e = OsoyooCarEnacter()
