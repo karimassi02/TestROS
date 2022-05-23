@@ -5,6 +5,7 @@
 from turtlepy_enacter import TurtlePyEnacter
 # from Agent5 import Agent5
 # from OsoyooCarEnacter import OsoyooCarEnacter
+from Agent2 import Agent2
 import random
 
 class Agent:
@@ -33,7 +34,7 @@ class Agent:
                 
         """ Computing the next action to enact """
         # TODO: Implement the agent's decision mechanism
-        self._action = 0
+        #self._action = 0
 
         # while (x<6):
         #     self._action = 0
@@ -44,13 +45,14 @@ class Agent:
         # if self._action == 0:
         #         self._action = 1
 
-        if self.counter >= 2:
-            #self._action = 1
-            self.counter = 0
-            if self._action == 1:
-                self._action = 0
-            elif self._action == 0:
-                self._action = 1
+        # if self.counter >= 2:
+        #     #self._action = 1
+        #     self.counter = 0
+        #     if self._action == 1:
+        #         self._action = 0
+        #     elif self._action == 0:
+        #         self._action = 1
+
         #     if self.counter > 10:
         #         self._action = 0
         #         self.counter = 0
@@ -58,7 +60,7 @@ class Agent:
 
         # TODO: Implement the agent's anticipation mechanism
         self.anticipated_outcome = 0
-        self.previous_outcome = outcome
+        #self.previous_outcome = outcome
         return self._action
 
         #if counter == 4:
@@ -105,13 +107,14 @@ class Environment4:
 # TODO Define the hedonist valance of interactions (action, outcome)
 hedonist_table = [[-1, 1], [-1, 1]]
 # TODO Choose an agent
-a = Agent(hedonist_table)
+# a = Agent(hedonist_table)
+a = Agent2(hedonist_table)
 # a = Agent5(hedonist_table)
 # TODO Choose an environment
-# e = Environment1()
+e = Environment1()
 # e = Environment2()
 # e = Environment3()
-e = Environment4()
+# e = Environment4()
 # e = TurtleSimEnacter()
 # e = TurtlePyEnacter()
 # e = OsoyooCarEnacter()
