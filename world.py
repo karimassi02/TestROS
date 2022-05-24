@@ -5,7 +5,8 @@
 from turtlepy_enacter import TurtlePyEnacter
 # from Agent5 import Agent5
 # from OsoyooCarEnacter import OsoyooCarEnacter
-from Agent2 import Agent2
+from Agent3 import Agent3
+#from Agent2 import Agent2
 import random
 
 class Agent:
@@ -108,7 +109,8 @@ class Environment4:
 hedonist_table = [[-1, 1], [-1, 1]]
 # TODO Choose an agent
 # a = Agent(hedonist_table)
-a = Agent2(hedonist_table)
+# a = Agent2(hedonist_table)
+a = Agent3(hedonist_table)
 # a = Agent5(hedonist_table)
 # TODO Choose an environment
 e = Environment1()
