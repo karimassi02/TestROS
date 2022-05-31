@@ -6,6 +6,7 @@ from turtlepy_enacter import TurtlePyEnacter
 from Agent3 import Agent3
 #from Agent2 import Agent2
 import random
+from Agent4 import Agent4
 #from Agent5 import Agent5
 from OsoyooCarEnacter import OsoyooCarEnacter
 ROBOT_IP = "192.168.4.1"
@@ -120,12 +121,12 @@ a = Agent3(valences)
 # a = Agent5(valences)
 
 # TODO Choose an environment
-e = Environment1()
+# e = Environment1()
 # e = Environment2()
 # e = Environment3()
 # e = Environment4()
 # e = TurtleSimEnacter()
-# e = TurtlePyEnacter()
+e = TurtlePyEnacter()
 # e = OsoyooCarEnacter(ROBOT_IP)
 
 if __name__ == '__main__':
