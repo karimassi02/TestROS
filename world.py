@@ -17,7 +17,7 @@ class Agent:
         """ Creating our agent """
         self.valence_table = valence_table
         self._action = None
-        self.anticipated_outcome = None
+        self.anticipated_outcome = 0
         self.counter = 0
         self.previous_outcome = None
     def action(self, outcome):

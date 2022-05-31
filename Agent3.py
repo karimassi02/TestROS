@@ -1,3 +1,5 @@
+import random
+
 class Agent3:
     def __init__(self, valence_table):
         """ Creating our agent """
@@ -46,8 +48,15 @@ class Agent3:
         valence0 = self.valence_table[0][self.outcome_for_action0]
 
         if valence0 > valence1:
+            self.anticipated_outcome = self.outcome_for_action0
             self._action = 0
+        elif valence0 == valence1:
+            self._action = random.randint(0, 1)
         else:
             self._action= 1
+            self.anticipated_outcome = self.outcome_for_action1
+
+        # if valence0 == valence1:
+        # self._action = random.randint(0, 1)
 
         return self._action
