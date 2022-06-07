@@ -1,8 +1,10 @@
+import random
 class Agent4:
     def __init__(self, valence_table):
         """ Creating our agent """
+        self.outcome_for_action2 = 0
         self.valence_table = valence_table
-        self._action = None
+        self._action = 0
         self.anticipated_outcome = None
         self.counter = 0
         self.previous_outcome = None
@@ -21,7 +23,21 @@ class Agent4:
                   ", valence: " + str(self.valence_table[self._action][outcome]) +
                   "; counter: " + str(self.counter) + ")")
 
-        if self._action is not None:
-            self._action = random.randint (0, 2)
+        #self._action = random.randint(0, 2)
+        if self._action == 0:
+            self.outcome_for_action0 = outcome
+        if self.outcome_for_action0 == 1:
+            self._action = 1
+            self.outcome_for_action1 = outcome
+        if self.outcome_for_action1 == 0:
+            self._action = 0
+            self.outcome_for_action0 = outcome
+        #     self._action = 1
+        # elif self._action == 1:
+        #     self.outcome_for_action1 = outcome
+        #     self._action = 2
+        # else:
+        #     self.outcome_for_action2 = outcome
+        #     self._action = 0
 
-#mettre valence négative lorsque la tortue cogne le mur
+        return self._action

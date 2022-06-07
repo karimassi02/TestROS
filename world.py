@@ -111,14 +111,15 @@ class Environment4:
 
 
 # TODO Define the valance of interactions (action, outcome)
-valences = [[-1, 1], [-1, 1]]
+valences = [[-1, 1], [-1, 1],[0, 2]]
 # valences = [[1, -1], [1, -1]]
 # TODO Choose an agent
 
 # a = Agent2(valences)
-a = Agent3(valences)
+# a = Agent3(valences)
 # a = Agent(valences)
 # a = Agent5(valences)
+a = Agent4(valences)
 
 # TODO Choose an environment
 # e = Environment1()
@@ -132,6 +133,6 @@ e = TurtlePyEnacter()
 if __name__ == '__main__':
     """ The main loop controlling the interaction of the agent with the environment """
     outcome = 0
-    for i in range(20):
+    for i in range(40):
         action = a.action(outcome)
         outcome = e.outcome(action)
