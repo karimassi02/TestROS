@@ -9,7 +9,7 @@ import random
 from Agent4 import Agent4
 #from Agent5 import Agent5
 from OsoyooCarEnacter import OsoyooCarEnacter
-ROBOT_IP = "192.168.4.1"
+ROBOT_IP = "10.40.20.250"
 
 
 
